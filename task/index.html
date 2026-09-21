@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudFlow - Modern SaaS Platform</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            bgMain: '#F8FAFC',
+            primary: '#4F46E5',
+            primaryHover: '#4338CA',
+            heading: '#0F172A',
+            body: '#475569',
+            cardBg: '#FFFFFF',
+            borderCol: '#E2E8F0',
+          },
+          maxWidth: {
+            'content': '1200px',
+            'heroText': '650px',
+          },
+          spacing: {
+            '20px': '20px',
+            '24px': '24px',
+            '32px': '32px',
+            '48px': '48px',
+            '72px': '72px',
+            '80px': '80px',
+            '520px': '520px',
+          }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+      color: #475569;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#475569] font-['Inter'] antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Main Container with max width 1200px & horizontal padding 24px -->
+  <div class="w-full max-w-[1200px] mx-auto px-[24px]">
+
+    <!-- Navbar: flex, justify-between, height 72px -->
+    <header class="w-full h-[72px] flex items-center justify-between border-b border-[#E2E8F0]">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 text-[#0F172A] font-bold text-xl tracking-tight">
+        <div class="w-9 h-9 rounded-lg bg-[#4F46E5] flex items-center justify-center text-white shadow-sm shadow-indigo-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <span>CloudFlow</span>
+      </a>
+
+      <!-- Desktop Navigation Links: font-medium 14px, hidden on <640px (mobile) -->
+      <nav class="hidden sm:flex items-center space-x-8">
+        <a href="#features" class="text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] transition-colors">Features</a>
+        <a href="#solutions" class="text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] transition-colors">Solutions</a>
+        <a href="#pricing" class="text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] transition-colors">Pricing</a>
+        <a href="#docs" class="text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] transition-colors">Documentation</a>
+      </nav>
+
+      <!-- Action Buttons & Mobile Menu Button -->
+      <div class="flex items-center gap-3">
+        <a href="#login" class="hidden sm:inline-flex text-[14px] font-medium text-[#0F172A] hover:text-[#4F46E5] transition-colors px-3 py-2">
+          Sign In
+        </a>
+        <a href="#get-started" class="hidden sm:inline-flex items-center justify-center text-[14px] font-medium text-white bg-[#4F46E5] hover:bg-[#4338CA] px-4 py-2 rounded-lg transition-all shadow-sm">
+          Get Started
+        </a>
+
+        <!-- Mobile Menu Hamburger Button (visible on <640px) -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="sm:hidden p-2 rounded-lg text-[#0F172A] hover:bg-[#E2E8F0] transition-colors">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden sm:hidden bg-white border border-[#E2E8F0] rounded-xl mt-2 p-4 shadow-lg space-y-3">
+      <a href="#features" class="block text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] py-2">Features</a>
+      <a href="#solutions" class="block text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] py-2">Solutions</a>
+      <a href="#pricing" class="block text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] py-2">Pricing</a>
+      <a href="#docs" class="block text-[14px] font-medium text-[#475569] hover:text-[#4F46E5] py-2">Documentation</a>
+      <div class="pt-2 border-t border-[#E2E8F0] flex flex-col gap-2">
+        <a href="#login" class="text-center text-[14px] font-medium text-[#0F172A] py-2 rounded-lg border border-[#E2E8F0]">Sign In</a>
+        <a href="#get-started" class="text-center text-[14px] font-medium text-white bg-[#4F46E5] hover:bg-[#4338CA] py-2 rounded-lg">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- Spacing Navbar -> Hero is 80px -->
+      <!-- Hero Section: min-height 520px, vertically centered, text width 650px, centered on mobile -->
+      <section class="mt-[80px] min-h-[520px] flex items-center">
+        <div class="w-full flex flex-col items-center sm:items-start text-center sm:text-left">
+          
+          <div class="max-w-[650px]">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-[#4F46E5] text-xs font-semibold uppercase tracking-wider mb-4">
+              <span class="w-2 h-2 rounded-full bg-[#4F46E5]"></span> Next-Gen Analytics 2.0
+            </div>
+
+            <!-- H1: 48px, font-bold, line-height 1.1 on desktop; 36px on mobile -->
+            <!-- Spacing Hero heading -> paragraph is 20px -->
+            <h1 class="text-[36px] sm:text-[48px] font-bold text-[#0F172A] leading-[1.1] mb-[20px] tracking-tight">
+              Scale your workflow with intelligent cloud automation
+            </h1>
+
+            <!-- Subtitle: 18px, line-height 1.6, body color #475569 -->
+            <!-- Spacing Paragraph -> buttons is 32px -->
+            <p class="text-[18px] text-[#475569] leading-[1.6] mb-[32px]">
+              Streamline complex pipelines, monitor real-time infrastructure metrics, and empower your engineering teams with unified cloud operations.
+            </p>
+
+            <!-- CTA Buttons: stacked on mobile (<640px), row on desktop -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <a href="#start" class="w-full sm:w-auto text-center px-6 py-3.5 bg-[#4F46E5] hover:bg-[#4338CA] text-white text-[16px] font-semibold rounded-lg transition-all shadow-md shadow-indigo-100 hover:shadow-indigo-200">
+                Start Free 14-Day Trial
+              </a>
+              <a href="#demo" class="w-full sm:w-auto text-center px-6 py-3.5 bg-white hover:bg-slate-50 text-[#0F172A] border border-[#E2E8F0] text-[16px] font-semibold rounded-lg transition-all flex items-center justify-center gap-2">
+                <svg class="w-5 h-5 text-[#475569]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Book Live Demo
+              </a>
+            </div>
+
+            <!-- Social proof / Trust badges -->
+            <div class="mt-8 pt-6 border-t border-[#E2E8F0]/60 flex items-center justify-center sm:justify-start gap-6 text-xs text-[#475569]">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                No credit card required
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                Instant 5-min setup
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Section -->
+      <!-- Spacing: Section heading -> cards is 48px -->
+      <section id="features" class="py-16">
+        <div class="text-center max-w-2xl mx-auto">
+          <!-- Section Heading: 32px, font-bold, color #0F172A -->
+          <h2 class="text-[32px] font-bold text-[#0F172A] tracking-tight">
+            Engineered for High-Velocity Teams
+          </h2>
+          <p class="text-[16px] text-[#475569] mt-3">
+            Everything you need to orchestrate, monitor, and scale distributed cloud services.
+          </p>
+        </div>
+
+        <!-- Feature cards Grid:
+             - Spacing Section -> cards: 48px (mt-[48px])
+             - Card Gap: 24px (gap-[24px])
+             - Mobile (<640px): 1-column (grid-cols-1)
+             - Tablet (640-1023px): 2-columns (sm:grid-cols-2)
+             - Desktop (>=1024px): 3-columns (lg:grid-cols-3)
+        -->
+        <div class="mt-[48px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+
+          <!-- Card 1 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <!-- Card Heading: 20px, font-semibold -->
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">Real-Time Telemetry</h3>
+              <!-- Body: 16px, color #475569 -->
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                Ingest billions of events per second with instant sub-millisecond querying and dynamic interactive dashboards.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">Enterprise Security</h3>
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                End-to-end zero-trust encryption, SOC2 Type II compliance, role-based access control, and audited security vaults.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">Automated CI/CD</h3>
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                Declarative pipeline workflows that automatically build, test, and release to Kubernetes clusters without downtime.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                </svg>
+              </div>
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">Distributed Storage</h3>
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                High-availability edge data replication with automatic sharding and zero latency cache layers across 30+ regions.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                </svg>
+              </div>
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">100+ Integrations</h3>
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                Connect your existing tools with one-click connectors for GitHub, Slack, Datadog, AWS, GCP, and Snowflake.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-[#FFFFFF] p-[24px] rounded-xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-[20px] font-semibold text-[#0F172A] mb-2">24/7 Dedicated SLA</h3>
+              <p class="text-[16px] text-[#475569] leading-relaxed">
+                Guaranteed 99.99% uptime with direct dedicated engineering support channels and proactive incident monitoring.
+              </p>
+            </div>
+            <a href="#" class="mt-4 inline-flex items-center text-[14px] font-medium text-[#4F46E5] hover:text-[#4338CA] group">
+              Learn more <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-8 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between text-[14px] text-[#475569] gap-4">
+      <p>&copy; 2026 CloudFlow Inc. All rights reserved.</p>
+      <div class="flex items-center space-x-6">
+        <a href="#" class="hover:text-[#4F46E5] transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-[#4F46E5] transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-[#4F46E5] transition-colors">Status</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Mobile Menu Interactive Toggle -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
