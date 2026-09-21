@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Magazine Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 30px;
+    }
+
+    .magazine {
+        width: 700px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+    }
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header span {
+        background: #c9b36b;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    /* Magazine Layout */
+    .layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+    }
+
+    /* Featured Article */
+    .featured {
+        height: 250px;
+        background: #f1eeee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    /* News */
+    .news {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .news div {
+        flex: 1;
+        background: #dceff7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+    }
+
+    /* Advertisement */
+    .advertisement {
+        height: 100px;
+        background: #dff5e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 20px;
+        text-align: center;
+        padding: 15px;
+        background: #f5f5f5;
+    }
+</style>
+
+<body>
+
+    <div class="magazine">
+
+        <header>
+            <h1>TASK 3 - MAGAZINE LAYOUT</h1>
+            <span>MEDIUM</span>
+        </header>
+
+        <div class="layout">
+
+            <div class="featured">
+                <h2>FEATURED<br>ARTICLE</h2>
+            </div>
+
+            <div class="news">
+                <div>NEWS 1</div>
+                <div>NEWS 2</div>
+            </div>
+
+            <div class="advertisement">
+                ADVERTISEMENT
+            </div>
+
+            <div class="news">
+                <div>NEWS 3</div>
+            </div>
+
+        </div>
+
+        <footer>
+            Magazine style with featured article, news and advertisement
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

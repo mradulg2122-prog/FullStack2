@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 - Responsive Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef2f6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .title-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #eef2f6;
+        }
+
+        .title-bar h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #334155;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            background-color: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Base Block Styling */
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            user-select: none;
+        }
+
+        .box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Color Scheme matching the design */
+        .header {
+            background-color: #cce3f5;
+            color: #486581;
+            min-height: 70px;
+        }
+
+        .sidebar {
+            background-color: #cbead6;
+            color: #406d51;
+            min-height: 70px;
+        }
+
+        .stat {
+            background-color: #fdf4bd;
+            color: #796e38;
+            min-height: 90px;
+        }
+
+        .recent-orders {
+            background-color: #e1def6;
+            color: #5b557e;
+            min-height: 180px;
+        }
+
+        .activity {
+            background-color: #f7d8dc;
+            color: #83525a;
+            min-height: 180px;
+        }
+
+        /* ====================================================
+            1. DESKTOP LAYOUT (Default: min-width: 1025px)
+            ==================================================== */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 220px repeat(3, 1fr);
+            gap: 16px;
+            grid-template-areas:
+                "sidebar header header header"
+                "sidebar stat1  stat2  stat3"
+                "sidebar stat4  stat5  stat6"
+                "sidebar orders orders activity";
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            min-height: 100%;
+        }
+
+        .stat-1 {
+            grid-area: stat1;
+        }
+
+        .stat-2 {
+            grid-area: stat2;
+        }
+
+        .stat-3 {
+            grid-area: stat3;
+        }
+
+        .stat-4 {
+            grid-area: stat4;
+        }
+
+        .stat-5 {
+            grid-area: stat5;
+        }
+
+        .stat-6 {
+            grid-area: stat6;
+        }
+
+        .recent-orders {
+            grid-area: orders;
+        }
+
+        .activity {
+            grid-area: activity;
+        }
+
+        /* ====================================================
+            2. TABLET LAYOUT (768px to 1024px)
+            ==================================================== */
+        @media (max-width: 1024px) and (min-width: 601px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-areas:
+                    "header header header header header header"
+                    "sidebar sidebar sidebar sidebar sidebar sidebar"
+                    "stat1 stat1 stat2 stat2 stat3 stat3"
+                    "stat4 stat4 stat5 stat5 stat6 stat6"
+                    "orders orders orders activity activity activity";
+            }
+
+            .sidebar {
+                min-height: 60px;
+            }
+
+            .stat {
+                min-height: 80px;
+            }
+
+            .recent-orders,
+            .activity {
+                min-height: 150px;
+            }
+        }
+
+        /* ====================================================
+            3. MOBILE LAYOUT (max-width: 600px)
+            ==================================================== */
+        @media (max-width: 600px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "stat1"
+                    "stat2"
+                    "stat3"
+                    "stat4"
+                    "stat5"
+                    "stat6"
+                    "orders"
+                    "activity";
+            }
+
+            .sidebar {
+                min-height: 55px;
+            }
+
+            .stat {
+                min-height: 65px;
+            }
+
+            .recent-orders,
+            .activity {
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title-bar">
+            <h1>TASK 4 - RESPONSIVE ADMIN DASHBOARD</h1>
+            <span class="badge">HARD</span>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Header -->
+            <div class="box header">HEADER</div>
+
+            <!-- Sidebar -->
+            <div class="box sidebar">SIDEBAR</div>
+
+            <!-- Stats (6 Items) -->
+            <div class="box stat stat-1">STAT</div>
+            <div class="box stat stat-2">STAT</div>
+            <div class="box stat stat-3">STAT</div>
+            <div class="box stat stat-4">STAT</div>
+            <div class="box stat stat-5">STAT</div>
+            <div class="box stat stat-6">STAT</div>
+
+            <!-- Recent Orders & Activity -->
+            <div class="box recent-orders">RECENT ORDERS</div>
+            <div class="box activity">ACTIVITY</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

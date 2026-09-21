@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border-width: 0px 0px 2px 0px;
+            margin: 3%;
+        }
+
+        input:required {
+            border-color: red;
+        }
+
+        input:optional {
+            border-color: green;
+        }
+
+        input:disabled {
+            border-width: 0px;
+            background-color: grey;
+            color: white;
+        }
+
+        input:enabled {
+            font-family: Montana;
+        }
+
+        input:in-range {
+            font-weight: 900;
+        }
+
+        input:out-of-range {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" class="required" placeholder="Name">
+        <br>
+        <input type="text" class="optional" placeholder="Age">
+        <br>
+        <input type="submit">
+        <input type="text" value="mathura" disabled><br>
+        <input type="number" min="10" max="100" required><br>
+    </form>
+</body>
+
+</html>

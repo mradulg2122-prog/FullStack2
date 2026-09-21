@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Size: Contain vs Cover</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Container for both sections */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Common styling for both sections */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Section Image Box (Fixed Height & Width to observe effect) */
+        .image-box {
+            width: 100%;
+            height: 350px;
+            border: 3px dashed #bdc3c7;
+            border-radius: 8px;
+            margin-top: 15px;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-color: #2c3e50;
+            /* Background color to easily see 'contain' extra space */
+        }
+
+        /* ---------------------------------------------------
+           SECTION 1: Background Size CONTAIN
+           (Poori image dikhegi, stretch/crop nahi hogi, khali jagah bachegi)
+           --------------------------------------------------- */
+        .box-contain {
+            /* Sample high quality image from Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80');
+
+            /* KEY PROPERTY FOR SECTION 1 */
+            background-size: contain;
+        }
+
+        /* ---------------------------------------------------
+           SECTION 2: Background Size COVER
+           (Poori jagah cover karegi, thodi crop ho sakti hai)
+           --------------------------------------------------- */
+        .box-cover {
+            /* Same image to clearly compare the difference */
+            background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80');
+
+            /* KEY PROPERTY FOR SECTION 2 */
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Background Size Demo</h1>
+    <p class="subtitle">Begineer Guide: Understand <b>contain</b> vs <b>cover</b></p>
+
+    <div class="container">
+
+        <!-- SECTION 1: CONTAIN -->
+        <div class="card">
+            <h2>Section 1: background-size: contain</h2>
+            <p>
+                <b>Contain:</b> Isme image poori tarah se box ke andar fit ho jaati hai (poori image dikhti hai, bina
+                cut hone ke).
+                Agar box ka size aur image ka ratio alag hai, toh aas-paas khali jagah (space) reh sakti hai.
+            </p>
+            <!-- Image box with contain -->
+            <div class="image-box box-contain"></div>
+        </div>
+
+        <!-- SECTION 2: COVER -->
+        <div class="card">
+            <h2>Section 2: background-size: cover</h2>
+            <p>
+                <b>Cover:</b> Isme image pooray box ko ache se cover (fill) kar leti hai.
+                Box mai koi khali jagah nahi rehti, par agar image ka size alag ho toh thodi image crop (kat) sakti hai.
+            </p>
+            <!-- Image box with cover -->
+            <div class="image-box box-cover"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

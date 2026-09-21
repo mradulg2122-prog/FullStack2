@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 900;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+        }
+
+        input[type="email"] {
+            border-radius: 5px;
+            border-color: black;
+            border-width: 2px;
+        }
+
+
+        /* CLASS SELECTOR: Dot (.) se define hota hai */
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+            background-color: #fff3cd;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .input-box {
+            padding: 8px 12px;
+            margin: 6px 0;
+            outline: none;
+        }
+
+
+        ul>li {
+            font-size: 1.2rem;
+            margin: 8px 0;
+            list-style-type: square;
+        }
+
+
+        .highlight+li {
+            color: #0284c7;
+            font-weight: bold;
+        }
+
+
+
+        body input {
+            font-size: 1rem;
+        }
+
+        /* button {
+            background-color: white;
+            color: black;
+        } */
+
+        /* button:active {
+            background-color: yellow;
+            color: black;
+        } */
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        button:active {
+            background-color: yellow;
+            color: black;
+        }
+
+        a:link {
+            color: #0284c7;
+        }
+
+        a:visited {
+            color: grey;
+        }
+
+        a[href^="https://www.google.com"] {
+            color: red;
+
+        }
+    </style>
+    <h2>Selectors</h2>
+
+    <ul>
+        <li>
+            UNIVERSAL SELECTOR
+        </li>
+        <li>
+            ID SELECTOR
+        </li>
+        <li class="highlight">
+            CLASS SELECTOR (Applied .highlight class)
+        </li>
+        <li>
+            ATTRIBUTE SELECTOR
+        </li>
+        <li>
+            ELEMENT SELECTOR
+        </li>
+        <li>
+            COMBINATOR SELECTOR
+        </li>
+        <li>
+            PSEUDO CLASS SELECTOR
+        </li>
+        <li>
+            PSEUDO ELEMENT SELECTOR
+        </li>
+    </ul>
+    <input class="input-box" type="email" placeholder="email" /><br>
+    <input class="input-box" type="password" placeholder="password" />
+    <button>Click Me!!</button>
+
+    <a href="https://www.google.com">Google</a><a href="https://www.amazon.in">Amazon</a>
+
+
+</body>
+
+</html>

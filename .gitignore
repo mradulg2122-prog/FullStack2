@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python virtual environments
+perception/
+perception311/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment & local files
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# IDE files
+.vscode/
+.idea/

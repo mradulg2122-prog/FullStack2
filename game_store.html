@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ready Assets Store - Low Poly Industrial Props Set</title>
+    
+    <!-- Google Fonts: Inter for clean modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. CSS RESET & GLOBAL VARIABLES (Beginner Friendly)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #0b0f14;
+            --accent-blue: #38b6ff;
+            --accent-blue-hover: #21a3ee;
+            --text-white: #ffffff;
+            --text-muted: #8e9cae;
+            --card-bg: rgba(20, 27, 36, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            /* Dark moody industrial lighting background effect */
+            background-image: 
+                radial-gradient(circle at 75% 35%, rgba(30, 45, 62, 0.5) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(15, 25, 38, 0.6) 0%, transparent 50%);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================================
+           2. HEADER SECTION (Logo & Top Navigation)
+           ========================================================================== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 4rem 1rem 4rem;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            z-index: 10;
+        }
+
+        /* Logo styling */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            color: #ffffff;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .title {
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: var(--text-white);
+        }
+
+        .logo-text .subtitle {
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: var(--accent-blue);
+        }
+
+        /* Top Right Nav Buttons */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .search-btn {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-white);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #b0c0d0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-white);
+        }
+
+        /* ==========================================================================
+           3. HERO MAIN SECTION (Text Left, 3D Assets Image Right)
+           ========================================================================== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 4rem;
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            position: relative;
+        }
+
+        /* Left Content Area */
+        .hero-left {
+            max-width: 520px;
+            z-index: 5;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2.2rem;
+            max-width: 440px;
+            font-weight: 400;
+        }
+
+        /* Bright Blue Buy Now Button */
+        .btn-buy {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--text-white);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 1rem 2.8rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(56, 182, 255, 0.35);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--accent-blue-hover);
+            box-shadow: 0 10px 30px rgba(56, 182, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Right Side Showcase Graphics */
+        .hero-right {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .hero-img {
+            max-width: 620px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+            animation: floatSlow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* ==========================================================================
+           4. BOTTOM BAR & FEATURE CARDS (Bottom Left Nav + Bottom Right Cards)
+           ========================================================================== */
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1rem 4rem 3rem 4rem;
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            z-index: 10;
+        }
+
+        /* Bottom Left Navigation */
+        .bottom-nav {
+            display: flex;
+            gap: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-nav-link {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #8fa0b5;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        .bottom-nav-link:hover {
+            color: var(--text-white);
+        }
+
+        /* Bottom Right Feature Cards Container */
+        .feature-cards {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        /* Individual Feature Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 0.8rem;
+            width: 210px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 182, 255, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-thumb {
+            width: 100%;
+            height: 105px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #121820;
+        }
+
+        .card-text {
+            font-size: 0.73rem;
+            color: #a0b0c4;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           5. RESPONSIVE DESIGN (For Mobile & Tablet Screens)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            header, .hero, .bottom-bar {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding-top: 2rem;
+            }
+
+            .hero-left {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-right {
+                justify-content: center;
+            }
+
+            .bottom-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .feature-cards {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         HEADER: Logo (Left) and Sign In/Up Navigation (Right)
+         ========================================================================== -->
+    <header>
+        <!-- Logo with Gear/Wrench SVG Icon -->
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+            <div class="logo-text">
+                <span class="title">GAME READY</span>
+                <span class="subtitle">ASSETS STORE</span>
+            </div>
+        </div>
+
+        <!-- Right Side Nav: Search & Auth Links -->
+        <div class="top-nav">
+            <button class="search-btn" title="Search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="nav-links">
+                <a href="#" class="nav-link">SIGN IN</a>
+                <a href="#" class="nav-link">SIGN UP</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         HERO SECTION: Main Title, Description, Buy Button & 3D Render Image
+         ========================================================================== -->
+    <main class="hero">
+        <!-- Left Side Text & Call To Action -->
+        <div class="hero-left">
+            <h1 class="hero-title">
+                LOW POLY INDUSTRIAL<br>PROPS SET
+            </h1>
+            
+            <p class="hero-description">
+                Wooden Crates and Pallet low poly models set in multiple file formats. You can import these files in different game engines like Unity, Unreal Engine, Source and others.
+            </p>
+
+            <button class="btn-buy">BUY NOW</button>
+        </div>
+
+        <!-- Right Side 3D Props Image -->
+        <div class="hero-right">
+            <img src="images/hero-props.png" alt="Low Poly Industrial Props 3D Render" class="hero-img">
+        </div>
+    </main>
+
+    <!-- ==========================================================================
+         BOTTOM BAR: Navigation Links (Left) & Feature Showcase Cards (Right)
+         ========================================================================== -->
+    <footer class="bottom-bar">
+        <!-- Bottom Navigation Links -->
+        <div class="bottom-nav">
+            <a href="#" class="bottom-nav-link">ABOUT</a>
+            <a href="#" class="bottom-nav-link">SUPPORT</a>
+            <a href="#" class="bottom-nav-link">COMMUNITY</a>
+        </div>
+
+        <!-- 3 Feature Detail Cards -->
+        <div class="feature-cards">
+            <!-- Card 1: Fire Extinguisher -->
+            <div class="card">
+                <img src="images/thumb-extinguisher.png" alt="Fire Extinguisher Detail" class="card-thumb">
+                <p class="card-text">High level of detail even on low poly</p>
+            </div>
+
+            <!-- Card 2: Gas Tank -->
+            <div class="card">
+                <img src="images/thumb-gastank.png" alt="Gas Tank Detail" class="card-thumb">
+                <p class="card-text">Realistic materials with normal mapping</p>
+            </div>
+
+            <!-- Card 3: Wooden Crate -->
+            <div class="card">
+                <img src="images/thumb-crate.png" alt="Wooden Crate Detail" class="card-thumb">
+                <p class="card-text">Package includes LOD's and collision primitives.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Box Shadow Image</title>
+    <style>
+        /* Basic Page Styling (Dark theme taaki colorful shadow achhe se dikhe) */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #0f172a;
+            /* Dark background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        /* Image Card Container */
+        .card {
+            border-radius: 20px;
+            padding: 10px;
+            background: #1e293b;
+
+            /* =========================================================
+               COLORFUL MULTI-LAYER BOX-SHADOW:
+               Har comma (,) ke baad ek naya shadow layer add hota hai!
+               Format: x-offset | y-offset | blur-radius | spread-radius | color
+               ========================================================= */
+            box-shadow:
+                0px 0px 20px 5px #ff007f,
+                /* Pink/Magenta Glow */
+                15px 15px 35px 5px #00f2fe,
+                /* Cyan/Blue Glow */
+                -15px -15px 35px 5px #7928ca,
+                /* Purple Glow */
+                0px 15px 40px 10px #ffaa00;
+            /* Golden/Orange Glow */
+
+            /* Smooth hover transition */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Image Styling */
+        .card img {
+            width: 320px;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Explanatory text below */
+        p {
+            margin-top: 25px;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>✨ Colorful Glow Effect ✨</h1>
+
+    <!-- Image Card with Colorful Box Shadow -->
+    <div class="card">
+        <img src="images/portrait.jpg" alt="Pencil Sketch Portrait">
+    </div>
+
+    <p>Hover on the image to see enhanced colorful glow!</p>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .box {
+            background-color: pink;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #444;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task 1-Basic Photo Gallery</h1>
+
+    <div class="gallery">
+        <div class="box">Photo 1</div>
+        <div class="box">Photo 2</div>
+        <div class="box">Photo 3</div>
+        <div class="box">Photo 4</div>
+        <div class="box">Photo 5</div>
+        <div class="box">Photo 6</div>
+        <div class="box">Photo 7</div>
+        <div class="box">Photo 8</div>
+        <div class="box">Photo 9</div>
+        <div class="box">Photo 10</div>
+        <div class="box">Photo 11</div>
+        <div class="box">Photo 12</div>
+    </div>
+
+</body>
+
+</html>

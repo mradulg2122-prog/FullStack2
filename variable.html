@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>layer</title>
+</head>
+<style>
+    @layer spl, base;
+
+    @layer base {
+        .p {
+            background-color: red;
+        }
+    }
+
+    @layer spl {
+        .p {
+            background-color: blue;
+        }
+    }
+</style>
+
+<body>
+    <p class="p">Hello World!!</p>
+</body>
+
+</html>

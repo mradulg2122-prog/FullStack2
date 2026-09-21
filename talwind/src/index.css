@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.mydiv {
+    @apply w-100 h-100 bg-black text-4xl font-bold underline;
+}
